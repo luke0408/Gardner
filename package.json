@@ -4,7 +4,8 @@
   "description": "test server for luke",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "",
+    "start": "babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/luke0408/node-to-nest/issues"
   },
-  "homepage": "https://github.com/luke0408/node-to-nest#readme"
+  "homepage": "https://github.com/luke0408/node-to-nest#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.0"
+  }
 }
