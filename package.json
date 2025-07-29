@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "",
-    "start": "babel-node index.js"
+    "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
