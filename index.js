@@ -1,5 +1,6 @@
 import express from 'express'
 import { tempRounter } from './src/routes/temp.route';
+import { status } from './config/response.status';
 
 const app = express()
 const port = 3000
@@ -13,8 +14,14 @@ app.use(logger);
 
 app.use('/temp', tempRounter);
 
+app.use((req, res, next) => {
+  const err = new BaseError(status.NOT_FOUND);
+  next(err);
+});
+
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  res.locals.message = err.message;
+  res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
   res.status(500).send(err.stack);
 });
 
