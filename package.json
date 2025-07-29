@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/luke0408/node-to-nest#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "http-status-codes": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.0",
