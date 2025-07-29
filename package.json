@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "test server for luke",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "",
     "start": "babel-node index.js"
