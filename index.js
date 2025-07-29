@@ -13,6 +13,11 @@ app.use(logger);
 
 app.use('/temp', tempRounter);
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send(err.stack);
+});
+
 app.get('/', function (req, res) {
   res.send('Hello World');
 });
