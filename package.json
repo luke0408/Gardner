@@ -1,0 +1,19 @@
+{
+  "name": "luke-test",
+  "version": "0.0.0",
+  "description": "test server for luke",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luke0408/node-to-nest.git"
+  },
+  "author": "luke0408",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luke0408/node-to-nest/issues"
+  },
+  "homepage": "https://github.com/luke0408/node-to-nest#readme"
+}
