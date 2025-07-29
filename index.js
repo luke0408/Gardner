@@ -1,4 +1,5 @@
 import express from 'express'
+import { tempRounter } from './src/routes/temp.route';
 
 const app = express()
 const port = 3000
@@ -9,6 +10,8 @@ const logger = (req, res, next) => {
 };
 
 app.use(logger);
+
+app.use('/temp', tempRounter);
 
 app.get('/', function (req, res) {
   res.send('Hello World');
