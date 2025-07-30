@@ -7,6 +7,7 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.docker
+    pkgs.corepack
   ];
 
   services = {
@@ -16,7 +17,9 @@
   };
 
   # Sets environment variables in the workspace
-  env = {};
+  env = {
+    COREPACK_DEFAULT_TO_LATEST=0;
+  };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
