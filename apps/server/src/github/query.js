@@ -3,13 +3,13 @@ import { gql } from './client';
 const contributionQuery = gql`
   query ($username: String!) {
     contributionsCollection {
+      contributionYears
       contributionCalendar {
         totalContributions
         weeks {
           contributionDays {
-            date
             contributionCount
-            color
+            weekday
           }
         }
       }
