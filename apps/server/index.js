@@ -1,9 +1,9 @@
-import express from 'express'
+import express from 'express';
 import { tempRounter } from './src/routes/temp.route';
 import { status } from './config/response.status';
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 const logger = (req, res, next) => {
   console.log('LOGGED');
