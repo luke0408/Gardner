@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "",
+    "test": "jest --watchAll",
     "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
