@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --colors --verbose --detectOpenHandles",
+    "test:watch": "jest --watchAll",
+    "coverage": "jest --coverage",
+    "coverage:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
@@ -32,5 +35,36 @@
     "jest": "^30.0.5",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.4"
+  },
+  "jest": {
+    "testTimeout": 90000,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.js$",
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "testEnvironmentOptions": {
+      "NODE_ENV": "test"
+    },
+    "restoreMocks": true,
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "config/*",
+      "index.js",
+      "test"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "clover",
+      "html"
+    ]
   }
 }
