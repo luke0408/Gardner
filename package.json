@@ -1,5 +1,5 @@
 {
-  "name": "jandimolee",
+  "name": "@luke0408/gardner",
   "version": "0.0.0",
   "private": true,
   "author": "luke0408",
@@ -17,7 +17,7 @@
   "dependencies": {
     "turbo": "^2.5.5"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "devDependencies": {
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
