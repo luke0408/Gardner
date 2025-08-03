@@ -1,0 +1,35 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  ignorePatterns: ['**/node_modules/**', 'dist/**', 'coverage/**', 'public/**', '.eslintrc.cjs'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
+    'plugin:unicorn/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['eslint-plugin-unicorn', 'simple-import-sort', 'unused-imports', 'import'],
+  rules: {
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/no-null': 'off',
+    'unicorn/prefer-query-selector': 'off',
+    'unicorn/better-regex': 'off',
+    'unicorn/no-useless-undefined': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+      },
+    ],
+  },
+};
