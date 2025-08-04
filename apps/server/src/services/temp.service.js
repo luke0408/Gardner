@@ -1,9 +1,9 @@
-import { BaseError } from '../../config/error';
-import { tempResponseDTO } from '../dtos/temp.response.dto';
-import { status } from '../../config/response.status';
+import { BaseError } from "../config/error";
+import { tempResponseDTO } from "../dtos/temp.response.dto";
+import { status } from "../config/response.status";
 
 export const getTempData = () => {
-  return tempResponseDTO('this is TEST');
+  return tempResponseDTO("this is TEST");
 };
 
 export const CheckFlag = (flag) => {
