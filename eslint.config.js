@@ -11,9 +11,9 @@ export default [
   {
     ignores: [
       "**/node_modules/**",
-      "dist/**",
-      "coverage/**",
-      "public/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "**/public/**",
       "eslint.config.js",
     ],
   },
