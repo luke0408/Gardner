@@ -2,9 +2,9 @@ name: build
 on:
   pull_request:
     paths:
-      - 'src/**'
-      - 'test/**'
-      - 'package.json'
+      - 'apps/server/src/**'
+      - 'apps/sever/test/**'
+      - 'apps/server/package.json'
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
