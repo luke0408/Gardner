@@ -1,7 +1,11 @@
-const typescript = require("@rollup/plugin-typescript");
-const terser = require("@rollup/plugin-terser");
+import terser from "@rollup/plugin-terser";
+import typescript from "@rollup/plugin-typescript";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
   input: `${__dirname}/../../src/api/index.ts`,
   output: {
     dir: `${__dirname}/lib`,
