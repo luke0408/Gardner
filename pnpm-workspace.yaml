@@ -8,3 +8,4 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@nestjs/core'
   - '@scarf/scarf'
+  - esbuild
