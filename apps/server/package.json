@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samchon/nestia-start"
+    "url": "https://github.com/luke0408/Gardner"
   },
   "keywords": [
     "nestia",
@@ -42,9 +42,9 @@
   "author": "AUTHOR",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samchon/nestia-start/issues"
+    "url": "https://github.com/luke0408/Gardner/issues"
   },
-  "homepage": "https://github.com/samchon/nestia-start#readme",
+  "homepage": "https://github.com/luke0408/Gardner#readme",
   "devDependencies": {
     "@autobe/interface": "^0.10.6",
     "@nestia/benchmark": "^7.3.1",
