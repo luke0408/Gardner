@@ -21,7 +21,7 @@ export default [
 
     plugins: {
       "@typescript-eslint": tsPlugin,
-      depercation: deprecationPlugin,
+      deprecation: deprecationPlugin,
     },
 
     rules: {
@@ -33,7 +33,6 @@ export default [
       "@typescript-eslint/no-namespace": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unused-expressions": "off",
-      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-var-requires": "off",
       "@typescript-eslint/no-floating-promises": "error",
       "@typescript-eslint/no-require-imports": "off",
