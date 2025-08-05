@@ -2,7 +2,7 @@ version: 2
 updates:
 #######################################################
   - package-ecosystem: 'npm'
-    directory: '/'
+    directory: '/apps/server'
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 25
@@ -33,7 +33,7 @@ updates:
           - "ts-patch"
 #######################################################
   - package-ecosystem: 'npm'
-    directory: '/packages/api'
+    directory: '/apps/server/packages/api'
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 25
