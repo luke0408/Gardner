@@ -8,8 +8,6 @@ import type { IConnection } from "@nestia/fetcher";
 import { PlainFetcher } from "@nestia/fetcher/lib/PlainFetcher";
 import typia from "typia";
 
-export * as bbs from "./bbs";
-
 /**
  * Health check endpoint.
  *
@@ -44,8 +42,7 @@ export namespace health {
 
   export const path = () => "/health";
   export const random = (): string => typia.random<string>();
-  export const simulate = (connection: IConnection): Output => {
-    connection;
+  export const simulate = (_connection: IConnection): Output => {
     return random();
   };
 }
