@@ -1,7 +1,6 @@
+import api from "@luke0408/ardner-api";
 import { DynamicExecutor } from "@nestia/e2e";
 import { sleep_for } from "tstl";
-
-import api from "@ORGANIZATION/PROJECT-api";
 
 import { MyConfiguration } from "../../src/MyConfiguration";
 

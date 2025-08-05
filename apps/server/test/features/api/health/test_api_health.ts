@@ -1,4 +1,4 @@
-import api from "@ORGANIZATION/PROJECT-api/lib/index";
+import api from "@luke0408/gardner-api/lib/index";
 
 export const test_api_health = async (
   connection: api.IConnection,
