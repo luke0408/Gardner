@@ -2,7 +2,11 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import deprecationPlugin from "eslint-plugin-deprecation";
 
+import baseConfig from "../../eslint.config";
+
 export default [
+  ...baseConfig,
+
   tsPlugin.configs.recommended,
 
   {
