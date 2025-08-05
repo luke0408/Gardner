@@ -2,7 +2,7 @@ module.exports = {
   arrowParens: "always",
   bracketSpacing: true,
   endOfLine: "lf",
-  parser: "typscript",
+  parser: "typescript",
   printWidth: 80,
   semi: true,
   singleQuote: false,
