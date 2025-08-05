@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@ORGANIZATION/PROJECT",
+  "name": "@luke0408/gardner-api",
   "version": "0.1.0",
   "description": "Starter kit of Nestia",
   "main": "lib/index.js",
