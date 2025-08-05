@@ -29,7 +29,7 @@
       // "--include", "some-words-to-include",
       // "--exclude", "some-word another-word",
   ],
-    "outFiles": ["${workspaceRoot}/bin/**/*.js"],
+    "outFiles": ["${workspaceRoot}/bin/**/*.js"]
   }
 ]
 }
