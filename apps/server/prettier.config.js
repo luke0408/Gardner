@@ -1,6 +1,6 @@
 import baseConfig from "../../prettier.config"
 
-module.exports = {
+export default {
   ...baseConfig,
 
   // PLUG-IN CONFIGURATIONS

@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   arrowParens: "always",
   bracketSpacing: true,
   endOfLine: "lf",
@@ -9,5 +9,7 @@ module.exports = {
   tabWidth: 2,
   trailingComma: "all",
   useTabs: false,
-  quoteProps: "as-needed"
-}
+  quoteProps: "as-needed",
+};
+
+export default config;
