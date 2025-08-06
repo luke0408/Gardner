@@ -48,7 +48,6 @@ export default tseslint.config([
     plugins: {
       import: eslintPluginImport,
       react: eslintPluginReact,
-      'react-hooks': reactHooks,
       'jsx-a11y': eslintPluginJsxA11y,
       prettier: eslintPluginPrettier,
       'testing-library': eslintPluginTestingLibrary,
