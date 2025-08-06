@@ -2,7 +2,7 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import deprecationPlugin from "eslint-plugin-deprecation";
 
-import baseConfig from "../../eslint.config";
+import baseConfig from "../../eslint.config.js";
 
 export default [
   ...baseConfig,
@@ -13,7 +13,7 @@ export default [
     files: ["src/**/*.ts", "test/**/*.ts"],
 
     languageOptions: {
-      parser: parser,
+      parser,
       parserOptions: {
         project: ["tsconfig.json", "test/tsconfig.json"],
       },
