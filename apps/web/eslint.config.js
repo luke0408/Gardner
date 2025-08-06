@@ -20,7 +20,10 @@ export default [
   // TypeScript + React + Additional Plugins
   {
     files: ["**/*.{ts,tsx}"],
-    extends: [reactHooks.configs["recommended-latest"]],
+    extends: [
+      reactHooks.configs["recommended-latest"],
+      reactRefresh.configs.vite,
+    ],
     settings: {
       react: { version: "detect" },
       "import/resolver": { typescript: {} },
