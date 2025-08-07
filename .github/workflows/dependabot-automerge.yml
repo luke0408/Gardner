@@ -5,8 +5,8 @@ on:
       - master
     types: [opened, synchronize]
     paths:
-      - "package.json"
-      - "packages/api/package.json"
+      - "apps/server/package.json"
+      - "apps/server/packages/api/package.json"
 jobs:
   build-and-merge:
     if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
