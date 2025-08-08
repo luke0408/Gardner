@@ -49,3 +49,36 @@ updates:
           - "typia"
           - "tgrid"
 #######################################################
+  - package-ecosystem: 'npm'
+    directory: '/apps/web'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 25
+    versioning-strategy: increase
+    allow:
+      - dependency-name: "vite"
+      - dependency-name: "vitest"
+      - dependency-name: "vite-tsconfig-paths"
+      - dependency-name: "@vitejs/plugin-react"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+      - dependency-name: "@types/react"
+      - dependency-name: "@types/react-dom"
+      - dependency-name: "typescript"
+    groups:
+      Vite:
+        patterns:
+          - "vite"
+          - "vitest"
+          - "vite-tsconfig-paths"
+          - "@vitejs/plugin-react"
+      React:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      Typescript:
+        patterns:
+          - "typescript"
+ 
