@@ -85,14 +85,18 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
+    "@apollo/server": "^5.0.0",
     "@nestia/core": "^7.3.1",
     "@nestia/fetcher": "^7.3.1",
+    "@nestjs/apollo": "^13.1.0",
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
+    "@nestjs/graphql": "^13.1.0",
     "@nestjs/platform-express": "^11.1.6",
     "commander": "10.0.0",
     "dotenv": "^16.3.1",
     "dotenv-expand": "^10.0.0",
+    "graphql": "^16.11.0",
     "inquirer": "8.2.5",
     "serialize-error": "^4.1.0",
     "tgrid": "^1.1.0",
