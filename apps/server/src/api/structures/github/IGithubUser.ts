@@ -3,6 +3,8 @@ import { tags } from "typia"
 /**
  * A GihubUser is and individual's account on Github 
  * that owns repositories and can make new content.
+ * 
+ * @see https://docs.github.com/en/graphql/reference/objects#user
  */
 export interface IGithubUser {
   /**

@@ -3,6 +3,8 @@ import { tags } from "typia";
 /**
  * A collection of contributions made by a {@link IGithubUser}, 
  * including opened issues, commits, and pull requests. 
+ * 
+ * @see https://docs.github.com/en/graphql/reference/objects#contributionscollection
  */
 export interface IContributionsCollection {
   /**
@@ -13,6 +15,8 @@ export interface IContributionsCollection {
 
 /**
  * A calendar of contributions made by a {@link IGithubUser}.
+ * 
+ * @see https://docs.github.com/en/graphql/reference/objects#contributioncalendar
  */
 export interface IContributionCalenadar {
   /**
@@ -28,6 +32,8 @@ export interface IContributionCalenadar {
 
 /**
  * A week of contributions in a {@link IGithubUser} contribution graph.
+ * 
+ * @see https://docs.github.com/en/graphql/reference/objects#contributioncalendarweek
  */
 export interface IContributionCalendarWeek {
   /**
@@ -38,6 +44,8 @@ export interface IContributionCalendarWeek {
 
 /**
  * Represents a single day of contributions on Github by a {@link IGithubUser}.
+ * 
+ * @see https://docs.github.com/en/graphql/reference/objects#contributioncalendarday
  */
 export interface IContributionCalendarDay {
   /**
