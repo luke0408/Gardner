@@ -1,19 +1,19 @@
-
 import type { CodegenConfig } from "@graphql-codegen/cli";
-import "dotenv/config";
 
 const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      "https://api.github.com/graphql": {
+      "https://docs.github.com/public/fpt/schema.docs.graphql": {
+        method: "GET",
+        handleAsSDL: true,
         headers: {
-          Authorization: `bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+          "User-Agent": "@luke0408/gardner-api",
         },
       },
     },
   ],
-  documents: "src/**/*.ts",
+  documents: "src/api/structures/github/queries.ts",
   generates: {
     "src/api/graphql/index.ts": {
       preset: "client",
@@ -21,5 +21,4 @@ const config: CodegenConfig = {
     },
   },
 };
-
 export default config;
