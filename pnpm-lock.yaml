@@ -78,6 +78,9 @@ importers:
       dotenv-expand:
         specifier: ^10.0.0
         version: 10.0.0
+      graphql-tag:
+        specifier: ^2.12.6
+        version: 2.12.6(graphql@16.11.0)
       inquirer:
         specifier: 8.2.5
         version: 8.2.5
