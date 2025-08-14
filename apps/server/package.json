@@ -50,6 +50,7 @@
     "@autobe/interface": "^0.10.6",
     "@graphql-codegen/cli": "^5.0.7",
     "@graphql-codegen/client-preset": "^4.8.3",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@nestia/benchmark": "^7.3.1",
     "@nestia/e2e": "^7.3.1",
     "@nestia/sdk": "^7.3.1",

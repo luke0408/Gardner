@@ -106,6 +106,9 @@ importers:
       '@graphql-codegen/client-preset':
         specifier: ^4.8.3
         version: 4.8.3(graphql@16.11.0)
+      '@graphql-typed-document-node/core':
+        specifier: ^3.2.0
+        version: 3.2.0(graphql@16.11.0)
       '@nestia/benchmark':
         specifier: ^7.3.1
         version: 7.3.2
