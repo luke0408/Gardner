@@ -15,9 +15,16 @@ const config: CodegenConfig = {
   ],
   documents: "src/api/structures/github/queries.ts",
   generates: {
-    "src/api/graphql/index.ts": {
-      preset: "client",
-      plugins: [],
+    "src/api/graphql/operations.ts": {
+      plugins: [
+        "typescript",
+        "typescript-operations",
+        "typed-document-node"
+      ],
+      config: {
+        useTypeImports: true,
+        avoidOptionals: true,
+      }
     },
   },
 };
