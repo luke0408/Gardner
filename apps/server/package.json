@@ -101,6 +101,7 @@
     "@nestjs/platform-express": "^11.1.6",
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/throttler": "^6.4.0",
+    "@types/compression": "^1.8.1",
     "commander": "10.0.0",
     "compression": "^1.8.1",
     "dotenv": "^16.3.1",
