@@ -28,7 +28,8 @@
     "package:api": "npm run build:api && cd packages/api && npm publish",
     "start": "node lib/executable/server",
     "start:dev": "nest start --watch",
-    "start:swagger": "ts-node src/executable/swagger.ts"
+    "start:swagger": "ts-node src/executable/swagger.ts",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,9 @@
   "homepage": "https://github.com/luke0408/Gardner#readme",
   "devDependencies": {
     "@autobe/interface": "^0.10.6",
+    "@graphql-codegen/cli": "^5.0.7",
+    "@graphql-codegen/client-preset": "^4.8.3",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@nestia/benchmark": "^7.3.3",
     "@nestia/e2e": "^7.3.3",
     "@nestia/sdk": "^7.3.3",
@@ -58,7 +62,7 @@
     "@types/cli-progress": "^3.11.5",
     "@types/express": "^4.17.21",
     "@types/inquirer": "^8.2.5",
-    "@types/node": "^18.11.0",
+    "@types/node": "^18.19.121",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
     "@typescript-eslint/parser": "^8.1.0",
@@ -85,14 +89,19 @@
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
+    "@apollo/server": "^5.0.0",
     "@nestia/core": "^7.3.3",
     "@nestia/fetcher": "^7.3.3",
+    "@nestjs/apollo": "^13.1.0",
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
+    "@nestjs/graphql": "^13.1.0",
     "@nestjs/platform-express": "^11.1.6",
     "commander": "10.0.0",
     "dotenv": "^16.3.1",
     "dotenv-expand": "^10.0.0",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6",
     "inquirer": "8.2.5",
     "serialize-error": "^4.1.0",
     "tgrid": "^1.1.0",
