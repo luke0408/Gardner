@@ -1728,7 +1728,7 @@ export type CancelEnterpriseMemberInvitationPayload = {
   clientMutationId: Maybe<Scalars['String']['output']>;
   /** The invitation that was canceled. */
   invitation: Maybe<EnterpriseMemberInvitation>;
-  /** A message confirming the result of canceling an member invitation. */
+  /** A message confirming the result of canceling a member invitation. */
   message: Maybe<Scalars['String']['output']>;
 };
 
@@ -2027,7 +2027,7 @@ export type CheckRunFilter = {
   checkType: InputMaybe<CheckRunType>;
   /** Filters the check runs by these conclusions. */
   conclusions: InputMaybe<Array<CheckConclusionState>>;
-  /** Filters the check runs by this status. Superceded by statuses. */
+  /** Filters the check runs by this status. Superseded by statuses. */
   status: InputMaybe<CheckStatusState>;
   /** Filters the check runs by this status. Overrides status. */
   statuses: InputMaybe<Array<CheckStatusState>>;
@@ -6882,13 +6882,13 @@ export type EnablePullRequestAutoMergeInput = {
   /** A unique identifier for the client performing the mutation. */
   clientMutationId: InputMaybe<Scalars['String']['input']>;
   /**
-   * Commit body to use for the commit when the PR is mergable; if omitted, a
+   * Commit body to use for the commit when the PR is mereabel; if omitted, a
    * default message will be used. NOTE: when merging with a merge queue any input
    * value for commit message is ignored.
    */
   commitBody: InputMaybe<Scalars['String']['input']>;
   /**
-   * Commit headline to use for the commit when the PR is mergable; if omitted, a
+   * Commit headline to use for the commit when the PR is mereabel; if omitted, a
    * default message will be used. NOTE: when merging with a merge queue any input
    * value for commit headline is ignored.
    */
@@ -11796,7 +11796,7 @@ export type MergeQueueConfiguration = {
   /** The minimum number of entries required to merge at once. */
   minimumEntriesToMerge: Maybe<Scalars['Int']['output']>;
   /**
-   * The amount of time in minutes to wait before ignoring the minumum number of
+   * The amount of time in minutes to wait before ignoring the minimum number of
    * entries in the queue requirement and merging a collection of entries
    */
   minimumEntriesToMergeWaitTime: Maybe<Scalars['Int']['output']>;
@@ -11894,7 +11894,7 @@ export enum MergeQueueMergeMethod {
 export enum MergeQueueMergingStrategy {
   /** Entries only allowed to merge if they are passing. */
   Allgreen = 'ALLGREEN',
-  /** Failing Entires are allowed to merge if they are with a passing entry. */
+  /** Failing Entries are allowed to merge if they are with a passing entry. */
   Headgreen = 'HEADGREEN'
 }
 
@@ -21306,7 +21306,7 @@ export type ProjectV2View = Node & {
   fullDatabaseId: Maybe<Scalars['BigInt']['output']>;
   /**
    * The view's group-by field.
-   * @deprecated The `ProjectV2View#order_by` API is deprecated in favour of the more capable `ProjectV2View#group_by_field` API. Check out the `ProjectV2View#group_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
+   * @deprecated The `ProjectV2View#order_by` API is deprecated in favor of the more capable `ProjectV2View#group_by_field` API. Check out the `ProjectV2View#group_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
    */
   groupBy: Maybe<ProjectV2FieldConnection>;
   /** The view's group-by field. */
@@ -21323,7 +21323,7 @@ export type ProjectV2View = Node & {
   project: ProjectV2;
   /**
    * The view's sort-by config.
-   * @deprecated The `ProjectV2View#sort_by` API is deprecated in favour of the more capable `ProjectV2View#sort_by_fields` API. Check out the `ProjectV2View#sort_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
+   * @deprecated The `ProjectV2View#sort_by` API is deprecated in favor of the more capable `ProjectV2View#sort_by_fields` API. Check out the `ProjectV2View#sort_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
    */
   sortBy: Maybe<ProjectV2SortByConnection>;
   /** The view's sort-by config. */
@@ -21332,14 +21332,14 @@ export type ProjectV2View = Node & {
   updatedAt: Scalars['DateTime']['output'];
   /**
    * The view's vertical-group-by field.
-   * @deprecated The `ProjectV2View#vertical_group_by` API is deprecated in favour of the more capable `ProjectV2View#vertical_group_by_fields` API. Check out the `ProjectV2View#vertical_group_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
+   * @deprecated The `ProjectV2View#vertical_group_by` API is deprecated in favor of the more capable `ProjectV2View#vertical_group_by_fields` API. Check out the `ProjectV2View#vertical_group_by_fields` API as an example for the more capable alternative. Removal on 2023-04-01 UTC.
    */
   verticalGroupBy: Maybe<ProjectV2FieldConnection>;
   /** The view's vertical-group-by field. */
   verticalGroupByFields: Maybe<ProjectV2FieldConfigurationConnection>;
   /**
    * The view's visible fields.
-   * @deprecated The `ProjectV2View#visibleFields` API is deprecated in favour of the more capable `ProjectV2View#fields` API. Check out the `ProjectV2View#fields` API as an example for the more capable alternative. Removal on 2023-01-01 UTC.
+   * @deprecated The `ProjectV2View#visibleFields` API is deprecated in favor of the more capable `ProjectV2View#fields` API. Check out the `ProjectV2View#fields` API as an example for the more capable alternative. Removal on 2023-01-01 UTC.
    */
   visibleFields: Maybe<ProjectV2FieldConnection>;
 };
@@ -23784,7 +23784,7 @@ export type ReferencedEvent = Node & {
   subject: ReferencedSubject;
 };
 
-/** Any referencable object */
+/** Any referenceable object */
 export type ReferencedSubject = Issue | PullRequest;
 
 /** Autogenerated input type of RegenerateEnterpriseIdentityProviderRecoveryCodes */
@@ -32892,9 +32892,9 @@ export enum ThreadSubscriptionState {
   IgnoringList = 'IGNORING_LIST',
   /** The User is never notified because they are ignoring the thread */
   IgnoringThread = 'IGNORING_THREAD',
-  /** The User is not recieving notifications from this thread */
+  /** The User is not receiving notifications from this thread */
   None = 'NONE',
-  /** The User is notified becuase they are watching the list */
+  /** The User is notified because they are watching the list */
   SubscribedToList = 'SUBSCRIBED_TO_LIST',
   /** The User is notified because they are subscribed to the thread */
   SubscribedToThread = 'SUBSCRIBED_TO_THREAD',
