@@ -3,6 +3,7 @@ import { APP_FILTER, APP_GUARD } from "@nestjs/core";
 import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 import { CacheModule } from "@nestjs/cache-manager";
 import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
+import { LoggerMiddleware } from "./common/middlewares/logger.middleware";
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    
+    consumer.apply(LoggerMiddleware).forRoutes("*");
   }
 }
