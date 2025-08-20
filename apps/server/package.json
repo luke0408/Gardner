@@ -109,6 +109,7 @@
     "graphql": "^16.11.0",
     "graphql-tag": "^2.12.6",
     "inquirer": "8.2.5",
+    "rxjs": "^7.8.2",
     "serialize-error": "^4.1.0",
     "tgrid": "^1.1.0",
     "tstl": "^3.0.0",
