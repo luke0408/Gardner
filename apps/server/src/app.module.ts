@@ -1,7 +1,10 @@
 import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common"
+import { CacheModule } from "@nestjs/cache-manager";
 
 @Module({
-  imports: [],
+  imports: [
+    CacheModule.register({ isGlobal: true })
+  ],
   controllers: [],
   providers: [],
 })
