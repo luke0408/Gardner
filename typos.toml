@@ -10,5 +10,13 @@ Jeongho = "Jeongho"
 Nam = "Nam"
 typia = "typia"
 
+[default.extend-identifiers]
+Ba = "Ba"
+BA = "BA"
+Fo = "Fo"
+FO = "FO"
+Pn = "Pn"
+PN = "PN"
+
 [files]
 extend-exclude = ["*.json"]
