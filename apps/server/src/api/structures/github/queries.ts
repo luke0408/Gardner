@@ -1,7 +1,7 @@
-import { gql } from "graphql-tag";
+import gql from "graphql-tag";
 
 export const GET_CONTRIBUTION_CALENDAR = gql`
-  query getContributionCalender($username: String!) {
+  query getContributionCalendar($username: String!) {
     user(login: $username) {
       login
       name
