@@ -1,6 +1,7 @@
 import { ClassSerializerInterceptor } from "@nestjs/common";
 import { NestFactory, Reflector } from "@nestjs/core";
 import { AppModule } from "./app.module";
+import { SwaggerSetting } from "./config/swagger";
 import compression from 'compression';
 
 async function bootstrap() {
@@ -9,6 +10,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
   app.use(compression());
   app.enableCors();
+
+  SwaggerSetting(app);
 
   await app.listen(3000, '0.0.0.0', () => {
     if (process.env.NODE_ENV === "production") {
