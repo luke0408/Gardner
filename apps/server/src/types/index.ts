@@ -6,14 +6,14 @@ export type Merge<F, S> = {
   [K in keyof (F & S)]: K extends keyof S ? S[K] : K extends keyof F ? F[K] : never;
 };
 
-interface ResponseForm<T> {
+export interface ResponseForm<T> {
   result: true;
   code: 1000;
   requestToResponse?: `${number}ms`;
   data: T;  
 }
 
-interface PaginationForm<T extends InitialPaginationResponseType> {
+export interface PaginationForm<T extends InitialPaginationResponseType> {
   result: true;
   code: 1000;
   requestToResponse?: `${number}ms`;
