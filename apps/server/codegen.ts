@@ -15,7 +15,7 @@ const config: CodegenConfig = {
   ],
   documents: "src/api/structures/github/queries.ts",
   generates: {
-    "src/api/graphql/operations.ts": {
+    "src/types/graphql/operations.ts": {
       plugins: [
         "typescript",
         "typescript-operations",
