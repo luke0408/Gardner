@@ -11,8 +11,15 @@ export const SwaggerSetting = (app: INestApplication) => {
   const swaggerDocument = JSON.parse(swaagerConfig);
   const configService = app.get(ConfigService);
 
-  const env = configService.get('NODE_ENV');
-  swaggerDocument.servers.at(0).url = configService.get(`${env}_SERVER_HOST`);
+  const env = configService.get<string>('NODE_ENV') ?? process.env.NODE_ENV ?? 'development';
+  const host = configService.get<string>(`${env}_SERVER_HOST`) ?? process.env.SERVER_HOST;
+  if (host) {
+    if (Array.isArray(swaggerDocument.servers) && swaggerDocument.servers.length > 0) {
+      swaggerDocument.servers[0].url = host;
+    } else {
+      swaggerDocument.servers = [{ url: host }];
+    }
+  }
 
   SwaggerModule.setup('api/nestia', app, swaggerDocument);
   SwaggerModule.setup('api', app, swaggerDocument);
