@@ -1,6 +1,6 @@
 import * as graphOperation from "./graphql/operations";
 import * as githubQueries from "./graphql/github.queries";
-import { ERROR } from "../config/errors/error";
+import { ERROR, ERROR as ErrorShape } from "../config/errors/error";
 
 export type Merge<F, S> = {
   [K in keyof (F & S)]: K extends keyof S ? S[K] : K extends keyof F ? F[K] : never;
@@ -34,11 +34,11 @@ export interface PaginationResponseType<T extends InitialPaginationResponseType>
   page: number;
 }
 
-type ERROR = { result: false; code: number; data: string };
+type ErrorShape = { result: false; code: number; data: string };
 type KeyOfError = keyof typeof ERROR;
 type ValueOfError = (typeof ERROR)[KeyOfError];
 
 export type Try<T> = ResponseForm<T>;
-export type TryCatch<T, E extends ERROR> = ResponseForm<T> | E;
+export type TryCatch<T, E extends ErrorShape> = ResponseForm<T> | E;
 export type TryPagination<T extends InitialPaginationResponseType> = PaginationForm<T>;
 export type TryCatchPagination<T extends InitialPaginationResponseType, E extends ValueOfError> = PaginationForm<T> | E;
