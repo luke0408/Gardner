@@ -2,7 +2,7 @@ import { InitialPaginationResponseType, PaginationForm, Try } from "../../types"
 
 const calcListTotalCount = (totalCount = 0, limit = 0): { totalResult: number, totalPage: number } => {
   const totalResult = totalCount;
-  const totalPage = totalResult % limit === 0 ? totalResult / limit : Math.floor(totalResult / limit) + 1;
+  const totalPage = limit > 0 ? Math.ceil(totalResult / limit) : 0;
   return { totalResult, totalPage };
 };
 
