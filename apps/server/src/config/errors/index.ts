@@ -17,8 +17,10 @@ export const isBusinessErrorGuard = (obj: any): obj is Merge<ERROR, {type: 'busi
 };
 
 const isErrorGuard = (obj: any): obj is ERROR => {
-  if (obj.result === false) {
-    return true;
-  }
-  return false;
+  return (
+    typeof obj === 'object' &&
+    obj !== null &&
+    'result' in obj &&
+    (obj as any).result === false
+  );
 };
