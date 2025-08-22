@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GithubService } from '../../external/github/github.service';
+import { GithubService } from '../../src/external/github/github.service';
 import { HttpService } from '@nestjs/axios';
 import { ConfigService } from '@nestjs/config';
 import { of } from 'rxjs';
 import { print } from 'graphql';
-import { GET_CONTRIBUTION_CALENDAR } from '../../types/graphql/github.queries';
-import { ContributionCalendar } from '../../external/github/models/contribution-calendar.model';
+import { GET_CONTRIBUTION_CALENDAR } from '../../src/types/graphql/github.queries';
+import { ContributionCalendar } from '../../src/external/github/models/contribution-calendar.model';
 import { describe, it, beforeEach, mock } from 'node:test';
 import assert from 'node:assert';
 
