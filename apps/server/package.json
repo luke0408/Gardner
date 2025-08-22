@@ -91,7 +91,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.9",
-    "@apollo/server": "^5.0.0",
+    "@apollo/server": "^4.11.3",
     "@nestia/core": "^7.3.3",
     "@nestia/fetcher": "^7.3.3",
     "@nestjs/apollo": "^13.1.0",
