@@ -1,4 +1,9 @@
-import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nestjs/common";
+import {
+  CallHandler,
+  ExecutionContext,
+  Injectable,
+  NestInterceptor,
+} from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
@@ -12,12 +17,14 @@ export class LoggingInterceptor implements NestInterceptor {
 
     return next.handle().pipe(
       tap((_response) => {
-        if (this.configService.get<string>('NODE_ENV')?.toLowerCase() !== 'test') {
+        if (
+          this.configService.get<string>("NODE_ENV")?.toLowerCase() !== "test"
+        ) {
           const requestToResponse: `${number}ms` = `${Date.now() - request.now}ms`;
           console.log(
-            `logging\n`
-            + `${request.method} ${path} ${requestToResponse}\n` 
-            + `currentTime : ${new Date()}]\n`
+            `logging\n` +
+              `${request.method} ${path} ${requestToResponse}\n` +
+              `currentTime : ${new Date()}]\n`,
           );
         }
       }),

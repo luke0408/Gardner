@@ -1,8 +1,8 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Query, Resolver } from "@nestjs/graphql";
 
-import { GetUserContributionInput } from './dto/get-user-contribution.input';
-import { GithubService } from './github.service';
-import { ContributionCalendar } from './models/contribution-calendar.model';
+import { GetUserContributionInput } from "./dto/get-user-contribution.input";
+import { GithubService } from "./github.service";
+import { ContributionCalendar } from "./models/contribution-calendar.model";
 
 @Resolver()
 export class GithubResolver {
@@ -10,7 +10,7 @@ export class GithubResolver {
 
   @Query(() => ContributionCalendar)
   async userContributionCalendar(
-    @Args('input') input: GetUserContributionInput,
+    @Args("input") input: GetUserContributionInput,
   ): Promise<ContributionCalendar> {
     return this.githubService.getUserContributionCalendar(input.username);
   }
