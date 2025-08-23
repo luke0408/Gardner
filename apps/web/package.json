@@ -2,13 +2,15 @@
   "name": "web",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "test": "vitest",
     "------------------------BUILDS------------------------": "",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "eslint": "eslint src && eslint test",
-    "eslint:fix": "eslint --fix src && eslint --fix test",
+    "eslint:fix": "eslint --fix src --no-error-on-unmatched-pattern && eslint --fix test --no-error-on-unmatched-pattern",
+    "prettier": "prettier \"src/**/*.{ts,tsx}\" && prettier \"test/**/*.{ts,tsx}\"",
     "preview": "vite preview"
   },
   "dependencies": {
