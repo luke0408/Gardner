@@ -17,19 +17,18 @@ export default [
   // Base JS configuration
   ...baseConfig,
 
+  // React Hoocks + React Refresh
+  reactHooks.configs["recommended-latest"],
+  reactRefresh.configs.vite,
+
   // TypeScript + React + Additional Plugins
   {
     files: ["**/*.{ts,tsx}"],
-    extends: [
-      reactHooks.configs["recommended-latest"],
-      reactRefresh.configs.vite,
-    ],
     settings: {
       react: { version: "detect" },
       "import/resolver": { typescript: {} },
     },
     plugins: {
-      import: eslintPluginImport,
       react: eslintPluginReact,
       "jsx-a11y": eslintPluginJsxA11y,
       prettier: eslintPluginPrettier,
@@ -81,6 +80,8 @@ export default [
       "import/default": "off",
       "import/no-named-as-default-member": "off",
       "import/no-named-as-default": "off",
+      "simple-import-sort/imports": "off",
+      "simple-import-sort/exports": "off",
       "react/react-in-jsx-scope": "off",
       "jsx-a11y/anchor-is-valid": "off",
       "@typescript-eslint/no-unused-vars": ["error"],
