@@ -1,6 +1,6 @@
 import { ApolloDriver } from "@nestjs/apollo";
 import { CacheModule } from "@nestjs/cache-manager";
-import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common"
+import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from "@nestjs/core";
 import { GraphQLModule } from "@nestjs/graphql";
 import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
@@ -13,7 +13,7 @@ import { GithubModule } from "./external/github/github.module";
 
 @Module({
   imports: [
-    ThrottlerModule.forRoot ({throttlers: [{ttl: 60, limit: 10}]}),
+    ThrottlerModule.forRoot({ throttlers: [{ ttl: 60, limit: 10 }] }),
     CacheModule.register({ isGlobal: true }),
     GraphQLModule.forRoot({
       autoSchemaFile: true,

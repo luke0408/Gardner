@@ -1,15 +1,16 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { GithubService } from '../../src/external/github/github.service';
-import { HttpService } from '@nestjs/axios';
-import { ConfigService } from '@nestjs/config';
-import { of } from 'rxjs';
-import { print } from 'graphql';
-import { GET_CONTRIBUTION_CALENDAR } from '../../src/types/graphql/github.queries';
-import { ContributionCalendar } from '../../src/external/github/models/contribution-calendar.model';
-import { describe, it, beforeEach, mock } from 'node:test';
-import assert from 'node:assert';
+import { HttpService } from "@nestjs/axios";
+import { ConfigService } from "@nestjs/config";
+import { Test, TestingModule } from "@nestjs/testing";
+import { print } from "graphql";
+import assert from "node:assert";
+import { beforeEach, describe, it, mock } from "node:test";
+import { of } from "rxjs";
 
-describe('GithubService', () => {
+import { GithubService } from "../../src/external/github/github.service";
+import { ContributionCalendar } from "../../src/external/github/models/contribution-calendar.model";
+import { GET_CONTRIBUTION_CALENDAR } from "../../src/types/graphql/github.queries";
+
+describe("GithubService", () => {
   let service: GithubService;
   let mockHttpService: { post: ReturnType<typeof mock.fn> };
 
@@ -19,7 +20,7 @@ describe('GithubService', () => {
       post: mock.fn(),
     };
     const mockConfigService = {
-      get: mock.fn(() => 'test_token'),
+      get: mock.fn(() => "test_token"),
     };
 
     const module: TestingModule = await Test.createTestingModule({
@@ -33,13 +34,13 @@ describe('GithubService', () => {
     service = module.get<GithubService>(GithubService);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     assert.ok(service);
   });
 
-  describe('getUserContributionCalendar', () => {
-    it('should return a contribution calendar', async () => {
-      const username = 'testuser';
+  describe("getUserContributionCalendar", () => {
+    it("should return a contribution calendar", async () => {
+      const username = "testuser";
       const mockResponse = {
         data: {
           data: {
@@ -54,7 +55,7 @@ describe('GithubService', () => {
           },
         },
         status: 200,
-        statusText: 'OK',
+        statusText: "OK",
         headers: {},
         config: {},
       };
@@ -67,7 +68,7 @@ describe('GithubService', () => {
       assert.strictEqual(result.totalContributions, 100);
       assert.strictEqual(mockHttpService.post.mock.calls.length, 1);
       assert.deepStrictEqual(mockHttpService.post.mock.calls[0].arguments, [
-        'https://api.github.com/graphql',
+        "https://api.github.com/graphql",
         {
           query: print(GET_CONTRIBUTION_CALENDAR),
           variables: { username },

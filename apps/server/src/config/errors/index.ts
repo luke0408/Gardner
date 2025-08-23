@@ -1,24 +1,26 @@
 import { Merge } from "../../types";
 
-export interface ERROR { 
+export interface ERROR {
   type: string;
-  result: false; 
-  code: number; 
+  result: false;
+  code: number;
   data: string;
-};
+}
 
-export const isBusinessErrorGuard = (obj: any): obj is Merge<ERROR, {type: 'business'}> => {
-  if(isErrorGuard(obj) && obj.type === 'business') {
-      return true;
-    }
+export const isBusinessErrorGuard = (
+  obj: any,
+): obj is Merge<ERROR, { type: "business" }> => {
+  if (isErrorGuard(obj) && obj.type === "business") {
+    return true;
+  }
   return false;
 };
 
 const isErrorGuard = (obj: any): obj is ERROR => {
   return (
-    typeof obj === 'object' &&
+    typeof obj === "object" &&
     obj !== null &&
-    'result' in obj &&
+    "result" in obj &&
     (obj as any).result === false
   );
 };
