@@ -1,13 +1,11 @@
-import baseConfig from "../../prettier.config"
+import baseConfig from "../../prettier.config.js"
 
 export default {
   ...baseConfig,
-
   // PLUG-IN CONFIGURATIONS
   plugins: ["@trivago/prettier-plugin-sort-imports"],
   importOrder: [
     "<THIRD_PARTY_MODULES>",
-    "^@luke0408/gardner-api(.*)$",
     "^[./]",
   ],
   importOrderSeparation: true,
