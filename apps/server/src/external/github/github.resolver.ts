@@ -1,6 +1,7 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { GithubService } from './github.service';
+
 import { GetUserContributionInput } from './dto/get-user-contribution.input';
+import { GithubService } from './github.service';
 import { ContributionCalendar } from './models/contribution-calendar.model';
 
 @Resolver()

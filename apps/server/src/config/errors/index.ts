@@ -8,11 +8,9 @@ export interface ERROR {
 };
 
 export const isBusinessErrorGuard = (obj: any): obj is Merge<ERROR, {type: 'business'}> => {
-  if(isErrorGuard(obj)) {
-    if(obj.type === 'business') {
+  if(isErrorGuard(obj) && obj.type === 'business') {
       return true;
     }
-  }
   return false;
 };
 

@@ -1,14 +1,15 @@
+import { ApolloDriver } from "@nestjs/apollo";
+import { CacheModule } from "@nestjs/cache-manager";
 import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common"
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from "@nestjs/core";
-import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
-import { CacheModule } from "@nestjs/cache-manager";
-import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
-import { LoggerMiddleware } from "./common/middlewares/logger.middleware";
 import { GraphQLModule } from "@nestjs/graphql";
-import { ApolloDriver } from "@nestjs/apollo";
-import { GithubModule } from "./external/github/github.module";
-import { TimeoutInterceptor } from "./common/interceptors/timeout.interceptor";
+import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
+
+import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
 import { LoggingInterceptor } from "./common/interceptors/logging.interceptor";
+import { TimeoutInterceptor } from "./common/interceptors/timeout.interceptor";
+import { LoggerMiddleware } from "./common/middlewares/logger.middleware";
+import { GithubModule } from "./external/github/github.module";
 
 @Module({
   imports: [

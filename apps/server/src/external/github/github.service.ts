@@ -1,8 +1,9 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { HttpService } from '@nestjs/axios';
-import { firstValueFrom } from 'rxjs';
 import { print } from 'graphql';
+import { firstValueFrom } from 'rxjs';
+
 import { GET_CONTRIBUTION_CALENDAR } from '../../types/graphql/github.queries';
 import {
   GetContributionCalenderQuery,
