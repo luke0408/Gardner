@@ -11,7 +11,7 @@ export class LoggingInterceptor implements NestInterceptor {
     const { path } = request;
 
     return next.handle().pipe(
-      tap((response) => {
+      tap((_response) => {
         if (this.configService.get<string>('NODE_ENV')?.toLowerCase() !== 'test') {
           const requestToResponse: `${number}ms` = `${Date.now() - request.now}ms`;
           console.log(

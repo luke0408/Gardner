@@ -1,10 +1,9 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+
 import { INestApplication } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SwaggerModule } from '@nestjs/swagger';
-
-import { readFileSync } from 'fs';
-
-import path from 'path';
 
 export const SwaggerSetting = (app: INestApplication) => {
   const swaagerConfig = readFileSync(path.join(__dirname, '../../swagger.json'), 'utf8');
