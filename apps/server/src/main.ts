@@ -1,9 +1,10 @@
 import { ClassSerializerInterceptor } from "@nestjs/common";
 import { NestFactory, Reflector } from "@nestjs/core";
+import compression from "compression";
+
 import { AppModule } from "./app.module";
 import { HttpExceptionFilter } from "./common/filters/http-exception.filter";
 import { SwaggerSetting } from "./config/swagger";
-import compression from 'compression';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,7 +16,7 @@ async function bootstrap() {
 
   SwaggerSetting(app);
 
-  await app.listen(3000, '0.0.0.0', () => {
+  await app.listen(3000, "0.0.0.0", () => {
     if (process.env.NODE_ENV === "production") {
       process.send?.("ready");
     }

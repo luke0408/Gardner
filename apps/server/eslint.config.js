@@ -1,42 +1,38 @@
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import parser from "@typescript-eslint/parser";
-import deprecationPlugin from "eslint-plugin-deprecation";
+import parser from '@typescript-eslint/parser';
+import deprecationPlugin from 'eslint-plugin-deprecation';
+import globals from 'globals';
 
-import baseConfig from "../../eslint.config.js";
+import baseConfig from '../../eslint.config.js';
 
 export default [
   ...baseConfig,
-
-  tsPlugin.configs.recommended,
-
   {
-    files: ["src/**/*.ts", "test/**/*.ts"],
-
+    files: ['src/**/*.ts', 'test/**/*.ts'],
     languageOptions: {
       parser,
       parserOptions: {
-        project: ["tsconfig.json", "test/tsconfig.json"],
+        project: ['tsconfig.json', 'test/tsconfig.json'],
+      },
+      globals: {
+        ...globals.node,
       },
     },
-
     plugins: {
-      "@typescript-eslint": tsPlugin,
       deprecation: deprecationPlugin,
     },
-
     rules: {
-      "@typescript-eslint/consistent-type-definitions": "off",
-      "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/no-empty-interface": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-inferrable-types": "off",
-      "@typescript-eslint/no-namespace": "off",
-      "@typescript-eslint/no-non-null-assertion": "off",
-      "@typescript-eslint/no-unused-expressions": "off",
-      "@typescript-eslint/no-var-requires": "off",
-      "@typescript-eslint/no-floating-promises": "error",
-      "@typescript-eslint/no-require-imports": "off",
-      "@typescript-eslint/no-empty-object-type": "off",
+      '@typescript-eslint/consistent-type-definitions': 'off',
+      '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-empty-interface': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/no-namespace': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 ];
