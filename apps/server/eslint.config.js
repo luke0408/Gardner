@@ -1,4 +1,4 @@
-import parser from '@typescript-eslint/parser';
+import { parser } from 'typescript-eslint';
 import deprecationPlugin from 'eslint-plugin-deprecation';
 import globals from 'globals';
 
