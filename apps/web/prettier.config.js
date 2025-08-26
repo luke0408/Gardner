@@ -1,14 +1,14 @@
 import baseConfig from "../../prettier.config.js";
-import pluginSortImports from "@ianvs/prettier-plugin-sort-imports";
 
 export default {
   ...baseConfig,
-  plugins: [pluginSortImports],
+  plugins: ["@trivago/prettier-plugin-sort-imports"],
   importOrder: [
     "^react",
     "<THIRD_PARTY_MODULES>",
-    "",
     "^@/",
     "^[./]",
   ],
+  importOrderSeparation: true,
+  importOrderParserPlugins: ["typescript", "decorators-legacy"],
 };
