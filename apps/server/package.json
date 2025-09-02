@@ -81,6 +81,7 @@
     "rollup": "^4.18.0",
     "source-map-support": "^0.5.21",
     "swagger-ui-express": "^5.0.0",
+    "ts-jest": "^29.4.1",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.1",
     "ts-patch": "^3.3.0",
@@ -126,5 +127,25 @@
   },
   "stackblitz": {
     "startCommand": "npm run prepare && npm run build:test && npm run test -- --simultaneous 1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/$1"
+    },
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
