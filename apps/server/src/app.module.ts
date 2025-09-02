@@ -10,6 +10,7 @@ import { LoggingInterceptor } from "./common/interceptors/logging.interceptor";
 import { TimeoutInterceptor } from "./common/interceptors/timeout.interceptor";
 import { LoggerMiddleware } from "./common/middlewares/logger.middleware";
 import { GithubModule } from "./external/github/github.module";
+import { EvaluationModule } from "./modules/evaluation.module";
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { GithubModule } from "./external/github/github.module";
       driver: ApolloDriver,
     }),
     GithubModule,
+    EvaluationModule,
   ],
   controllers: [],
   providers: [
