@@ -11,7 +11,7 @@ import { catchError, timeout } from "rxjs/operators";
 @Injectable()
 export class TimeoutInterceptor implements NestInterceptor {
   intercept(
-    context: ExecutionContext,
+    _context: ExecutionContext,
     next: CallHandler<any>,
   ): Observable<any> | Promise<Observable<any>> {
     return next.handle().pipe(
